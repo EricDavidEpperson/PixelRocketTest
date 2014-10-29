@@ -1,4 +1,3 @@
-#ocr_numbers.rb
 require 'minitest/autorun'
 require_relative 'ocr'
 

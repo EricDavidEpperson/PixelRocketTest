@@ -1,5 +1,5 @@
-#anagram.rb
-
+require 'minitest/autorun'
+require_relative 'anagram'
 
 class AnagramTest < MiniTest::Unit::TestCase
 
@@ -9,41 +9,40 @@ class AnagramTest < MiniTest::Unit::TestCase
   end
 
   def test_detect_simple_anagram
-    skip
     detector = Anagram.new('ba')
     anagrams = detector.match(['ab', 'abc', 'bac'])
     assert_equal ['ab'], anagrams
   end
 
   def test_detect_multiple_anagrams
-    skip
+    #skip
     detector = Anagram.new('abc')
     anagrams = detector.match(['ab', 'abc', 'bac'])
     assert_equal ['abc', 'bac'], anagrams
   end
 
   def test_does_not_confuse_different_duplicates
-    skip
+    #skip
     detector = Anagram.new('abb')
     assert_equal [], detector.match(['baa'])
   end
 
   def test_detect_anagram
-    skip
+    #skip
     detector = Anagram.new('listen')
     anagrams = detector.match %w(enlists google inlets banana)
     assert_equal ['inlets'], anagrams
   end
 
   def test_multiple_anagrams
-    skip
+    #skip
     detector = Anagram.new('allergy')
     anagrams = detector.match %w(gallery ballerina regally clergy largely leading)
     assert_equal ['gallery', 'regally', 'largely'], anagrams
   end
 
   def test_anagrams_are_case_insensitive
-    skip
+    #skip
     detector = Anagram.new('Orchestra')
     anagrams = detector.match %w(cashregister carthorse radishes)
     assert_equal ['carthorse'], anagrams
