@@ -5,7 +5,8 @@ class Phone
 
   def initialize(number)
     @number = number
-    @number.gsub!(/\D/, "")
+    @number.gsub!(/[\(\)\s-.]/,"")
+    @number.gsub!(/\D/,"0")
   end
 
   def number
